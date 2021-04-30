@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.Bead_project.iml
+# Datasource local storage ignored files
+/../../../../../../../:\3Djatek_repo\3D_Jatek\Bead_project\.idea\.idea.Bead_project\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

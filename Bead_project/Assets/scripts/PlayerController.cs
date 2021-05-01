@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
     public GameObject playerModel;
 
     private Vector3 moveDirection;
+
+    public float knockBackForce;
+    public float knockBackTime;
+    private float knockBackCounter;
         
     // Start is called before the first frame update
     void Start()
@@ -25,20 +29,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        float yStore = moveDirection.y; // elmentjük az y irányú komponenst még a normalizálás előtt
-        moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
-        moveDirection = moveDirection.normalized * moveSpeed;
-        moveDirection.y = yStore; // visszaadjuk neki azt az értéket
-        if (controller.isGrounded) // ha a öldön vagyunk akkor tudunk ugrani
+        if (knockBackCounter <= 0)
         {
-            moveDirection.y = 0f;
-            if (Input.GetButtonDown("Jump"))
+            float yStore = moveDirection.y; // elmentjük az y irányú komponenst még a normalizálás előtt
+            moveDirection = (transform.forward * Input.GetAxis("Vertical")) + (transform.right * Input.GetAxis("Horizontal"));
+            moveDirection = moveDirection.normalized * moveSpeed;
+            moveDirection.y = yStore; // visszaadjuk neki azt az értéket
+            if (controller.isGrounded) // ha a öldön vagyunk akkor tudunk ugrani
             {
-                moveDirection.y = jumpForce;
+                moveDirection.y = 0f;
+                if (Input.GetButtonDown("Jump"))
+                {
+                    moveDirection.y = jumpForce;
+                }
             }
         }
-        
+        else
+        {
+            knockBackCounter -= Time.deltaTime;
+        }
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime); // visszaessen a földre
 
@@ -53,5 +62,13 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("IsGrounded", controller.isGrounded);
         anim.SetFloat("Speed", (Mathf.Abs(Input.GetAxis("Vertical")) + Mathf.Abs(Input.GetAxis("Horizontal"))));
+    }
+
+    public void KnockBack(Vector3 direction)
+    {
+        knockBackCounter = knockBackTime;
+        
+        moveDirection = direction * knockBackForce;
+        moveDirection.y = knockBackForce;
     }
 }

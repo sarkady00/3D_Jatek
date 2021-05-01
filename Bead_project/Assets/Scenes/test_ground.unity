@@ -269,9 +269,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6090327533032277865, guid: 18eb45cb2e010514993be6e12be45f54, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3151966692224455790, guid: 18eb45cb2e010514993be6e12be45f54, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 18eb45cb2e010514993be6e12be45f54, type: 3}
       propertyPath: m_Name
       value: sporty_granny
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412947698131372804, guid: 18eb45cb2e010514993be6e12be45f54, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900233210554245405, guid: 18eb45cb2e010514993be6e12be45f54, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eb45cb2e010514993be6e12be45f54, type: 3}
@@ -675,6 +691,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
+  thePlayer: {fileID: 0}
+  invincibilityLength: 3
+  flashLength: 0.1
+  playerRenderer: {fileID: 1371757106}
 --- !u!1 &928233996 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 18eb45cb2e010514993be6e12be45f54, type: 3}
@@ -5940,6 +5960,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &1371757106 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3151966692224455790, guid: 18eb45cb2e010514993be6e12be45f54, type: 3}
+  m_PrefabInstance: {fileID: 512903743}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1457958199
 GameObject:
   m_ObjectHideFlags: 0
@@ -6173,6 +6198,8 @@ MonoBehaviour:
   pivot: {fileID: 2140244466}
   rotateSpeed: 20
   playerModel: {fileID: 928233996}
+  knockBackForce: 20
+  knockBackTime: 0.5
 --- !u!1001 &1527551044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6644,7 +6671,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6888437949253051435, guid: 091e78df09c5c5d4b8bca1db7687cf35, type: 3}
       propertyPath: m_Size.x
-      value: 0.69
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -6888437949253051435, guid: 091e78df09c5c5d4b8bca1db7687cf35, type: 3}
       propertyPath: m_Size.y
@@ -6806,5 +6833,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 2.12, z: 0.97}
+  m_Size: {x: 1.29, y: 2.12, z: 0.97}
   m_Center: {x: 0, y: 0, z: 0}

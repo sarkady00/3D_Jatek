@@ -59,6 +59,7 @@
      <Compile Include="Assets\scripts\HurtPlayer.cs" />
      <Compile Include="Assets\scripts\GoldPickup.cs" />
      <Compile Include="Assets\scripts\DestroyOverTime.cs" />
+     <Compile Include="Assets\scripts\Checkpoint.cs" />
      <None Include="Assets\Models\Free Low Poly Gold\readme.txt" />
  <Reference Include="UnityEngine">
  <HintPath>D:/programok/unity/2020.2.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

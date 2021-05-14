@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bff2966bcf7992946b4a3ccafb2c85eb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - theHealthMan: {instanceID: 0}
+  - theRend: {instanceID: 0}
+  - cpOff: {fileID: 2100000, guid: 98ad0562d1d494241a8788d38f13cd23, type: 2}
+  - cpOn: {fileID: 2100000, guid: 378bc498051675b4984102334a003650, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

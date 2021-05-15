@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,7 @@ public class Menu : MonoBehaviour
 
     public void NewGame(string scene)
     {
+        PlayerPrefs.DeleteKey("gold");
         SceneManager.LoadScene(scene);
     }
 
@@ -26,4 +28,15 @@ public class Menu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            PlayerPrefs.SetInt("gold", FindObjectOfType<GameManager>().GetGoldCount());
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        }
+    }
+    
+    
 }

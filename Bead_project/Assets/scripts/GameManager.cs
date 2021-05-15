@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentGold = PlayerPrefs.GetInt("gold");
+        GetComponent<GameManager>().AddGold(0); // frissítjük a kiíratást
     }
 
     // Update is called once per frame
@@ -24,5 +25,10 @@ public class GameManager : MonoBehaviour
     {
         currentGold += goldToAdd;
         goldText.text = "Gold: " + currentGold;
+    }
+
+    public int GetGoldCount()
+    {
+        return currentGold;
     }
 }

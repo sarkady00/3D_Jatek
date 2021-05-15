@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 6d8a125c6323f4748a071bd3ca0b9ab2
   - enabled: 1
+    path: Assets/Scenes/Guide.unity
+    guid: b63b35741b3802d419d24899059ef29e
+  - enabled: 1
+    path: Assets/Scenes/Labirinth.unity
+    guid: 8663a70dbaa0d2b47b00fc5c210f59d1
+  - enabled: 1
     path: Assets/Scenes/test_ground.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}

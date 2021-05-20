@@ -50,7 +50,7 @@ public class CameraController : MonoBehaviour
             pivot.Rotate(vertical,0,0);
         }
 
-        if (pivot.rotation.eulerAngles.x > maxViewAngle && pivot.rotation.eulerAngles.x < 180 ) // limitáljuk a kamera felfele való forgatását ( ne tudjon ugrálni)
+        if (pivot.rotation.eulerAngles.x > maxViewAngle && pivot.rotation.eulerAngles.x < 180 + maxViewAngle) // limitáljuk a kamera felfele való forgatását ( ne tudjon ugrálni)
         {
             pivot.rotation = Quaternion.Euler(maxViewAngle,0,0);
         }

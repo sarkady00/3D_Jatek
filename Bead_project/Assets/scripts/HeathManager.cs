@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HeathManager : MonoBehaviour
 {
@@ -30,18 +31,42 @@ public class HeathManager : MonoBehaviour
     public float fadeSpeed;
     public float waitForFade;
 
+    private int chance;
+
+    private float Timer;
+    private string timerString;
+    
+
     // Start is called before the first frame update
     void Start()
     {
+        Timer = 0;
+        chance = PlayerPrefs.GetInt("chance");
+        GetComponent<GameManager>().ChanceUpdate(chance);
+        
+        currentHealth = PlayerPrefs.GetInt("currentHP");
+        GetComponent<GameManager>().HpUpdate(currentHealth);
+        
         respawnPoint = thePlayer.transform.position;
-        currentHealth = maxHealth;
-        Debug.Log("Kiscica, krumpli, Lófasz");
+        
+        if (SceneManager.GetActiveScene().buildIndex != 1)
+        {
+            PlayerPrefs.SetInt("mapIndex", SceneManager.GetActiveScene().buildIndex);
+        }
+        //Debug.Log("Kiscica, krumpli, Lófasz");
         //thePlayer = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Timer += Time.deltaTime;
+        int minutes = Mathf.FloorToInt(Timer / 60F);
+        int seconds = Mathf.FloorToInt(Timer % 60F);
+        int milliseconds = Mathf.FloorToInt((Timer * 100F) % 100F);
+        timerString = minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
+        GetComponent<GameManager>().TimeUpdate(timerString);
+        
         if (invincibilityCounter > 0)
         {
             invincibilityCounter -= Time.deltaTime;
@@ -84,11 +109,24 @@ public class HeathManager : MonoBehaviour
         if (invincibilityCounter <= 0)
         {
             currentHealth -= damage;
+            GetComponent<GameManager>().HpUpdate(currentHealth);
 
             if (currentHealth <= 0)
             {
-                Respawn();
-                Debug.Log("Halott");
+                
+                // Debug.Log("Halott");
+                chance -= 1;
+                GetComponent<GameManager>().ChanceUpdate(chance);
+                
+                if (chance == 0)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    SceneManager.LoadScene("Hell");
+                }
+                else
+                {
+                    Respawn();
+                }
             }
             else
             {
@@ -134,6 +172,7 @@ public class HeathManager : MonoBehaviour
 
         thePlayer.transform.position = respawnPoint;
         currentHealth = maxHealth;
+        GetComponent<GameManager>().HpUpdate(currentHealth);
         
         
         
@@ -154,4 +193,25 @@ public class HeathManager : MonoBehaviour
     {
         respawnPoint = newPosition;
     }
+    
+    public int GetHP()
+    {
+        return currentHealth;
+    }
+    
+    public int GetChance()
+    {
+        return chance;
+    }
+    
+    public string GetTimeStr()
+    {
+        return timerString;
+    }
+    
+    public float GetTimeFloat()
+    {
+        return Timer;
+    }
+    
 }

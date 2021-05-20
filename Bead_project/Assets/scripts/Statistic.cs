@@ -16,13 +16,14 @@ public class Statistic : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.None;
+        
+        // statisztika eredmények kiírása
         onMapGold.text = "On Map: " + PlayerPrefs.GetInt("previousGold") + "/6";
         AllCollected.text = "Collected so far: " + PlayerPrefs.GetInt("gold") + "/18";
-        prog = Convert.ToInt32((Convert.ToDouble(PlayerPrefs.GetInt("gold"))  / 18 )* 100);
-        Debug.Log(prog);
+        prog = Convert.ToInt32((Convert.ToDouble(PlayerPrefs.GetInt("gold"))  / 18 )* 100); // az előre haladást %-ban írjuk ki
         Progress.text = "Progress: " + prog.ToString() + "%";
         
-        if (PlayerPrefs.GetString("timeStr3") == "")
+        if (PlayerPrefs.GetString("timeStr3") == "") // éppen azt írjuk ki amelyiket teljesítettük
         {
             if (PlayerPrefs.GetString("timeStr2") == "")
             {

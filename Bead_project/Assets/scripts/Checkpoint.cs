@@ -25,15 +25,15 @@ public class Checkpoint : MonoBehaviour
         
     }
 
-    public void CheckpointOn()
+    public void CheckpointOn() // aktiváljuk a checkpointot
     {
         Checkpoint[] checkpoints = FindObjectsOfType<Checkpoint>();
         foreach (Checkpoint cp in checkpoints)
         {
-            cp.CheckpointOff();
+            cp.CheckpointOff(); // az összeset deaktiváljuk
         }
         
-        theRend.material = cpOn;
+        theRend.material = cpOn; // kivéve amelyikbe utoljára belementünk
     }
 
     public void CheckpointOff()
@@ -43,7 +43,7 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Player"))
+        if (other.tag.Equals("Player")) // ha belemegyünk akkor az fog aktiválódni a többi pedig deaktiválódni
         {
             theHealthMan.SetSpawnPoint(transform.position);
             CheckpointOn();

@@ -41,33 +41,33 @@ public class HeathManager : MonoBehaviour
     void Start()
     {
         Timer = 0;
-        chance = PlayerPrefs.GetInt("chance");
-        GetComponent<GameManager>().ChanceUpdate(chance);
+        chance = PlayerPrefs.GetInt("chance"); // lekérjük a megmaradt esélyeink számát
+        GetComponent<GameManager>().ChanceUpdate(chance);// frissítjük a kiíratást
         
+        // ugyan ez a hp-ra
         currentHealth = PlayerPrefs.GetInt("currentHP");
         GetComponent<GameManager>().HpUpdate(currentHealth);
         
-        respawnPoint = thePlayer.transform.position;
+        respawnPoint = thePlayer.transform.position; // spawn beállítása
         
-        if (SceneManager.GetActiveScene().buildIndex != 1)
+        if (SceneManager.GetActiveScene().buildIndex != 1) // az 1-es indexű a statisztika oldal
         {
-            PlayerPrefs.SetInt("mapIndex", SceneManager.GetActiveScene().buildIndex);
+            PlayerPrefs.SetInt("mapIndex", SceneManager.GetActiveScene().buildIndex); // elmentjük a scene indexet
         }
-        //Debug.Log("Kiscica, krumpli, Lófasz");
-        //thePlayer = FindObjectOfType<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // idő mérése
         Timer += Time.deltaTime;
         int minutes = Mathf.FloorToInt(Timer / 60F);
         int seconds = Mathf.FloorToInt(Timer % 60F);
         int milliseconds = Mathf.FloorToInt((Timer * 100F) % 100F);
         timerString = minutes.ToString("00") + ":" + seconds.ToString("00") + ":" + milliseconds.ToString("00");
-        GetComponent<GameManager>().TimeUpdate(timerString);
+        GetComponent<GameManager>().TimeUpdate(timerString); // idő kiíratása a UI-ra
         
-        if (invincibilityCounter > 0)
+        if (invincibilityCounter > 0) // ha sérhetetlenek vagyunk
         {
             invincibilityCounter -= Time.deltaTime;
             flashCounter -= Time.deltaTime;
@@ -83,7 +83,7 @@ public class HeathManager : MonoBehaviour
             }
         }
 
-        if (isFadeToBlack)
+        if (isFadeToBlack) // elsötétítés
         {
             blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b,
                 Mathf.MoveTowards(blackScreen.color.a, 1f, fadeSpeed * Time.deltaTime));
@@ -93,7 +93,7 @@ public class HeathManager : MonoBehaviour
             }
         }
         
-        if (isFadeFromBlack)
+        if (isFadeFromBlack) // sötétítés visszavonása
         {
             blackScreen.color = new Color(blackScreen.color.r, blackScreen.color.g, blackScreen.color.b,
                 Mathf.MoveTowards(blackScreen.color.a, 0f, fadeSpeed * Time.deltaTime));
@@ -109,23 +109,21 @@ public class HeathManager : MonoBehaviour
         if (invincibilityCounter <= 0)
         {
             currentHealth -= damage;
-            GetComponent<GameManager>().HpUpdate(currentHealth);
+            GetComponent<GameManager>().HpUpdate(currentHealth); // frissítjük a kiírást
 
-            if (currentHealth <= 0)
+            if (currentHealth <= 0) // ha meghalunk
             {
-                
-                // Debug.Log("Halott");
                 chance -= 1;
-                GetComponent<GameManager>().ChanceUpdate(chance);
+                GetComponent<GameManager>().ChanceUpdate(chance);// frissítjük a kiírást
                 
-                if (chance == 0)
+                if (chance == 0) // ha nincs több esélyünk
                 {
-                    Cursor.lockState = CursorLockMode.None;
-                    SceneManager.LoadScene("Hell");
+                    Cursor.lockState = CursorLockMode.None; // felszabadítjuk az egeret
+                    SceneManager.LoadScene("Hell"); // akkor vesztettünk
                 }
                 else
                 {
-                    Respawn();
+                    Respawn(); // egyébként újra próbálkozunk
                 }
             }
             else
@@ -151,10 +149,10 @@ public class HeathManager : MonoBehaviour
     public IEnumerator RespawnCo()
     {
         isRespawning = true;
-        thePlayer.gameObject.SetActive(false);
-        Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation);
+        thePlayer.gameObject.SetActive(false); // eltüntetjük a karaktert
+        Instantiate(deathEffect, thePlayer.transform.position, thePlayer.transform.rotation); // lejátszuk a halál effektet az adott helyen
         yield return new WaitForSeconds(respawnLength);
-        isFadeToBlack = true;
+        isFadeToBlack = true; // elsötétül a kép
         
         invincibilityCounter = invincibilityLength; // újra éledéskor kis sebezhetetlenség
         playerRenderer.enabled = false;
@@ -166,27 +164,13 @@ public class HeathManager : MonoBehaviour
 
         isRespawning = false; 
         thePlayer.gameObject.SetActive(true);
-        thePlayer.transform.position = respawnPoint;
+        thePlayer.transform.position = respawnPoint; // a respawnpoint-hoz teleportáljuk a karaktert
         
-        yield return new WaitForSeconds(0.00000000001f);
+        yield return new WaitForSeconds(0.00000000001f); // enélkül sokszor nem teleportált vissza a spawn helyre
 
-        thePlayer.transform.position = respawnPoint;
+        thePlayer.transform.position = respawnPoint; // biztos ami biztos
         currentHealth = maxHealth;
-        GetComponent<GameManager>().HpUpdate(currentHealth);
-        
-        
-        
-        
-    }
-
-    public void HealPlayer(int healAmount)
-    {
-        currentHealth += healAmount;
-
-        if (currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
+        GetComponent<GameManager>().HpUpdate(currentHealth); // frissítjük a kiírást
     }
 
     public void SetSpawnPoint(Vector3 newPosition)
@@ -194,6 +178,7 @@ public class HeathManager : MonoBehaviour
         respawnPoint = newPosition;
     }
     
+    // érték lekérő függvények:
     public int GetHP()
     {
         return currentHealth;
@@ -208,10 +193,4 @@ public class HeathManager : MonoBehaviour
     {
         return timerString;
     }
-    
-    public float GetTimeFloat()
-    {
-        return Timer;
-    }
-    
 }

@@ -426,7 +426,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Hal\xE1lunk ut\xE1n ki kell \xE9rdemeln\xFCnk, hogy a mennybe juthassunk.\nEhhez
     kell teljes\xEDteni h\xE1rom kih\xEDv\xE1st (3x kell eljutni a f\xE1hoz) \xE9s
-    k\xF6zben \xF6ssze szedni 12 db aranyat.\nHa ez nem siker\xFClt vagy elj\xE1tszottuk
+    k\xF6zben \xF6ssze szedni 10 db aranyat.\nHa ez nem siker\xFClt vagy elj\xE1tszottuk
     az utols\xF3 es\xE9ly\xFCnket is, akkor elvesztett\xFCk a pr\xF3b\xE1t \xE9s
     a pokolba ker\xFCl\xFCnk."
 --- !u!222 &624968883
@@ -616,9 +616,9 @@ RectTransform:
   - {fileID: 326081798}
   - {fileID: 1815676920}
   - {fileID: 624968881}
-  - {fileID: 937402849}
   - {fileID: 958158684}
   - {fileID: 923340278}
+  - {fileID: 937402849}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -657,12 +657,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 731848122}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -81}
-  m_SizeDelta: {x: 500, y: 100}
+  m_AnchoredPosition: {x: 0, y: -92}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &923340279
 MonoBehaviour:
@@ -700,7 +700,9 @@ MonoBehaviour:
   m_Text: "A kaktuszok 25-t sebeznek, 100 \xE9let\xFCnk van \xE9s 3 es\xE9ly\xFCnk.
     \nHa meghalunk addig \xE9led\xFCnk \xFAjra am\xEDg m\xE9g van es\xE9ly\xFCnk
     r\xE1. \nHa elfogyott az es\xE9ly\xFCnk \xE9s meghalunk akkor pokolba ker\xFCl\xFCnk.\nA
-    piros illetve a z\xF6ld goly\xF3k a checkpointok."
+    piros illetve a z\xF6ld goly\xF3k a checkpointok.\nH\xE1rom p\xE1ly\xE1n van
+    6-6 arany, ebb\u0151l kell \xF6sszeszedni min\xE9l t\xF6bbet, de legal\xE1bb
+    10-et."
 --- !u!222 &923340280
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -742,11 +744,11 @@ RectTransform:
   m_Children:
   - {fileID: 1671702448}
   m_Father: {fileID: 731848122}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -148}
+  m_AnchoredPosition: {x: 0, y: -176}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &937402850
@@ -886,7 +888,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 731848122}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

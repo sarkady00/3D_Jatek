@@ -13,6 +13,7 @@ public class Heaven : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Végső statisztika időeredmnyeinek kiírása
         firstText.text = "LVL1\n" + PlayerPrefs.GetString("timeStr1");
         secondText.text = "LVL2\n" + PlayerPrefs.GetString("timeStr2");
         thirdText.text = "LVL3\n" + PlayerPrefs.GetString("timeStr3");

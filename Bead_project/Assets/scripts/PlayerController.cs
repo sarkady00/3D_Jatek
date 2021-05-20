@@ -20,13 +20,10 @@ public class PlayerController : MonoBehaviour
     public float knockBackTime;
     private float knockBackCounter;
 
-    //private AudioSource JumpAudio;
-
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        //JumpAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,14 +40,14 @@ public class PlayerController : MonoBehaviour
                 moveDirection.y = 0f;
                 if (Input.GetButtonDown("Jump"))
                 {
-                    moveDirection.y = jumpForce;
+                    moveDirection.y = jumpForce; // ugrunk
                 }
             }
             
         }
         else
         {
-            knockBackCounter -= Time.deltaTime;
+            knockBackCounter -= Time.deltaTime; // amíg tart a lökés addig nem tudunk mozogni
         }
         
         
@@ -65,7 +62,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, pivot.rotation.eulerAngles.y, 0); // ha valamerre nézünk, és elindulunk akkor a karakter irányba áll és megindul
             Quaternion newRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z));
-            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
+            playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime); // forgatás
         }
 
         anim.SetBool("IsGrounded", controller.isGrounded);

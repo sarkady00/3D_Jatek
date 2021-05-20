@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentGold = PlayerPrefs.GetInt("gold");
+        currentGold = PlayerPrefs.GetInt("gold"); // elmentjük, hogy megmaradjon az érték és át lehessen majd vinni másik pályára
 
         GetComponent<GameManager>().AddGold(0); // frissítjük a kiíratást
         
@@ -50,7 +50,6 @@ public class GameManager : MonoBehaviour
         timeText.text = time;
     }
     
-
     public int GetGoldCount()
     {
         return currentGold;

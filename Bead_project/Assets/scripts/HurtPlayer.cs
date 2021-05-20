@@ -22,7 +22,7 @@ public class HurtPlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Vector3 hitDirection = other.transform.position - transform.position;
+            Vector3 hitDirection = other.transform.position - transform.position; // pont a mozgással ellentétes irányú
             hitDirection = hitDirection.normalized;
             FindObjectOfType<HeathManager>().HurtPlayer(damageToGive, hitDirection);
         }

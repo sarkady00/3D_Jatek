@@ -229,7 +229,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 91}
+  m_AnchoredPosition: {x: 0, y: 124}
   m_SizeDelta: {x: 500, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &326081799
@@ -309,7 +309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 138}
+  m_AnchoredPosition: {x: 0, y: 164}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &615586857
@@ -388,7 +388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -56}
+  m_AnchoredPosition: {x: 0, y: 25}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624968882
@@ -424,18 +424,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "A j\xE1t\xE9k c\xE9lja, hogy hal\xE1lunk ut\xE1n kiv\xEDvjuk, hogy a menybe
-    jussunk.\nEhhez a p\xE1ly\xE1kon tal\xE1lhat\xF3 arany r\xF6g\xF6ket kell gy\u0171jten\xFCnk,
-    a j\xE1t\xE9k v\xE9g\xE9ig 15 darabot, hogy v\xE9g\xFCl bejuthassunk a paradicsomba.
-    \nP\xE1ly\xE1nk\xE9nt 6 arany van elrejtve \xE9s minden p\xE1ly\xE1n meg kell
-    keresni az \"Els\u0151 f\xE1t\", amelynek meg\xE9rint\xE9s\xE9vel haladhatunk
-    tov\xE1bb az \xF6sszesen 3 p\xE1ly\xE1n.\nHa meg van mind a 15 darab arany a
-    3. p\xE1lya v\xE9g\xE9re akkor \xFCdv\xF6z\xF6lhet\xFCnk, ha viszont nincs a
-    Pokolba ker\xFCl\xFCnk \xE9s kezdhetj\xFCk el\u0151lr\u0151l.\n3 \xE9let\xFCnk
-    van, ha 3x megs\xE9r\xFClsz bizonyos terept\xE1rgyakt\xF3l akkor meghalsz \xE9s
-    ha 3x meghalsz szint\xE9n elvesz\xEDted a j\xE1t\xE9kot.\nSz\xF3val l\xE9gy \xF3vatos,
-    ugyanis nem lehet b\xF3nusz \xE9letet szerezni.\nEgyes p\xE1ly\xE1kon checkpointok
-    seg\xEDtik az el\u0151rehalad\xE1sod."
+  m_Text: "Hal\xE1lunk ut\xE1n ki kell \xE9rdemeln\xFCnk, hogy a mennybe juthassunk.\nEhhez
+    kell teljes\xEDteni h\xE1rom kih\xEDv\xE1st (3x kell eljutni a f\xE1hoz) \xE9s
+    k\xF6zben \xF6ssze szedni 12 db aranyat.\nHa ez nem siker\xFClt vagy elj\xE1tszottuk
+    az utols\xF3 es\xE9ly\xFCnket is, akkor elvesztett\xFCk a pr\xF3b\xE1t \xE9s
+    a pokolba ker\xFCl\xFCnk."
 --- !u!222 &624968883
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -624,6 +617,8 @@ RectTransform:
   - {fileID: 1815676920}
   - {fileID: 624968881}
   - {fileID: 937402849}
+  - {fileID: 958158684}
+  - {fileID: 923340278}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -632,6 +627,88 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &923340277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 923340278}
+  - component: {fileID: 923340280}
+  - component: {fileID: 923340279}
+  m_Layer: 5
+  m_Name: Info2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &923340278
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923340277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 731848122}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -81}
+  m_SizeDelta: {x: 500, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &923340279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923340277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "A kaktuszok 25-t sebeznek, 100 \xE9let\xFCnk van \xE9s 3 es\xE9ly\xFCnk.
+    \nHa meghalunk addig \xE9led\xFCnk \xFAjra am\xEDg m\xE9g van es\xE9ly\xFCnk
+    r\xE1. \nHa elfogyott az es\xE9ly\xFCnk \xE9s meghalunk akkor pokolba ker\xFCl\xFCnk.\nA
+    piros illetve a z\xF6ld goly\xF3k a checkpointok."
+--- !u!222 &923340280
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923340277}
+  m_CullTransparentMesh: 1
 --- !u!1 &937402848
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,6 +855,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc8bfab01a1466439de1e0351716a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldNeed: 0
+--- !u!1 &958158683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 958158684}
+  - component: {fileID: 958158686}
+  - component: {fileID: 958158685}
+  m_Layer: 5
+  m_Name: Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &958158684
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958158683}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 731848122}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -31}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &958158685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958158683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Tudnival\xF3k"
+--- !u!222 &958158686
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958158683}
+  m_CullTransparentMesh: 1
 --- !u!1 &1322562635
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +1141,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 17}
+  m_AnchoredPosition: {x: 0, y: 72}
   m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1815676921

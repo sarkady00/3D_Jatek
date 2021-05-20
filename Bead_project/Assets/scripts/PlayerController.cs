@@ -20,14 +20,13 @@ public class PlayerController : MonoBehaviour
     public float knockBackTime;
     private float knockBackCounter;
 
-    private AudioSource footSteps;
-    public bool isWalking;
-        
+    //private AudioSource JumpAudio;
+
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        footSteps = GetComponent<AudioSource>();
+        //JumpAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -54,18 +53,7 @@ public class PlayerController : MonoBehaviour
             knockBackCounter -= Time.deltaTime;
         }
         
-        if (moveDirection.x != 0 && moveDirection.z != 0 && moveDirection.y == 0) 
-        {
-            //isWalking = true;
-            if (footSteps.isPlaying == false)
-            {
-                footSteps.Play();
-            }
-        }
-        else
-        {
-            footSteps.Stop();
-        }
+        
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale * Time.deltaTime); // visszaessen a földre
 

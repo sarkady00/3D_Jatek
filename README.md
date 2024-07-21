@@ -1,6 +1,7 @@
 Three steps from heaven
 
 Készítette: Sarkadi Balázs Róbert
+
 Neptun-kód: XCYSWG
 
 A menüben a "New Game" gomb megnyomása után, minden szükséges infót megtudunk a játékról (irányítás, cél, sztori).
